@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto de Óptica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>La luz y la óptica</h1>
+    <p>Proyecto escolar de Física</p>
+    <nav>
+      <button class="nav-btn" data-section="inicio">Inicio</button>
+      <button class="nav-btn" data-section="fundamentos">Fundamentos</button>
+      <button class="nav-btn" data-section="sistemas">Sistemas ópticos</button>
+      <button class="nav-btn" data-section="tecnologias">Tecnologías</button>
+      <button class="nav-btn" data-section="laboratorio">Laboratorio</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="section active">
+      <h2>Bienvenido</h2>
+      <p>En esta página aprenderás conceptos básicos sobre la luz, los espejos, las lentes, la fibra óptica y los sensores láser.</p>
+      <div class="notice">Selecciona una sección del menú para comenzar.</div>
+    </section>
+
+    <section id="fundamentos" class="section">
+      <h2>Fundamentos y propagación</h2>
+      <article>
+        <h3>¿Qué es la luz?</h3>
+        <p>La luz es una forma de radiación electromagnética. En el vacío viaja aproximadamente a 300,000,000 m/s.</p>
+        <p><b>Ejemplo:</b> la luz del Sol tarda aproximadamente 8 minutos y 20 segundos en llegar a la Tierra.</p>
+      </article>
+      <article>
+        <h3>Reflexión</h3>
+        <p>La reflexión sucede cuando la luz rebota en una superficie.</p>
+        <p class="formula">Ángulo de incidencia = Ángulo de reflexión</p>
+        <p><b>Ejemplo:</b> un espejo refleja la imagen de una persona.</p>
+      </article>
+      <article>
+        <h3>Ley de Snell</h3>
+        <p>Describe cómo cambia la dirección de la luz al pasar de un medio a otro.</p>
+        <p class="formula">n₁ · sen(θ₁) = n₂ · sen(θ₂)</p>
+        <p><b>Ejemplo:</b> la luz pasa del aire al agua y cambia su dirección.</p>
+      </article>
+    </section>
+
+    <section id="sistemas" class="section">
+      <h2>Sistemas ópticos y dispositivos</h2>
+      <article>
+        <h3>Espejos</h3>
+        <p>Los espejos planos, cóncavos y convexos reflejan la luz y permiten formar imágenes.</p>
+      </article>
+      <article>
+        <h3>Lentes delgadas</h3>
+        <p>Las lentes convergentes concentran los rayos y las divergentes los separan.</p>
+      </article>
+      <article>
+        <h3>Telescopios</h3>
+        <p>Los telescopios utilizan lentes o espejos para observar objetos muy lejanos.</p>
+      </article>
+    </section>
+
+    <section id="tecnologias" class="section">
+      <h2>Tecnologías avanzadas</h2>
+      <article>
+        <h3>Fibra óptica</h3>
+        <p>Transmite información por medio de pulsos de luz y reflexión interna total.</p>
+      </article>
+      <article>
+        <h3>Láser</h3>
+        <p>El láser produce un haz de luz concentrado y se utiliza en sensores, medicina y dispositivos electrónicos.</p>
+      </article>
+      <article>
+        <h3>Sensores ToF</h3>
+        <p>Los sensores Time of Flight calculan distancias midiendo cuánto tarda un pulso de luz en regresar.</p>
+      </article>
+    </section>
+
+    <section id="laboratorio" class="section">
+      <h2>Laboratorio virtual</h2>
+
+      <div class="simulator">
+        <h3>1. Calculadora de la Ley de Snell</h3>
+        <p>Introduce los índices de refracción y el ángulo de incidencia.</p>
+        <label>Índice del primer medio (n₁):</label>
+        <input type="number" id="n1" value="1" step="0.01">
+
+        <label>Ángulo de incidencia (grados):</label>
+        <input type="number" id="theta1" value="30" min="0" max="89">
+
+        <label>Índice del segundo medio (n₂):</label>
+        <input type="number" id="n2" value="1.33" step="0.01">
+
+        <button id="snellButton">Calcular</button>
+        <p id="snellResult" class="result">Resultado: todavía no calculado.</p>
+      </div>
+
+      <div class="simulator">
+        <h3>2. Calculadora del ángulo crítico</h3>
+        <p>Para que exista reflexión interna total, n₁ debe ser mayor que n₂.</p>
+        <label>Índice del núcleo (n₁):</label>
+        <input type="number" id="core" value="1.50" step="0.01">
+
+        <label>Índice del revestimiento (n₂):</label>
+        <input type="number" id="cladding" value="1.45" step="0.01">
+
+        <button id="criticalButton">Calcular</button>
+        <p id="criticalResult" class="result">Resultado: todavía no calculado.</p>
+      </div>
+
+      <div class="simulator">
+        <h3>3. Sensor ToF</h3>
+        <p>Calcula la distancia a partir del tiempo de ida y vuelta del láser.</p>
+        <p class="formula">d = (c · t) / 2</p>
+        <label>Tiempo total en nanosegundos:</label>
+        <input type="number" id="time" value="20" step="0.01" min="0">
+
+        <button id="tofButton">Calcular</button>
+        <p id="tofResult" class="result">Resultado: todavía no calculado.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto de Física - Óptica</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
