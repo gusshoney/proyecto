@@ -69,3 +69,4 @@ document.getElementById("tofButton").addEventListener("click", () => {
 
   result.textContent = "Distancia aproximada: " + distance.toFixed(3) + " metros";
 });
+
